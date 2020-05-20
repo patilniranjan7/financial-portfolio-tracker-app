@@ -1,0 +1,31 @@
+th,
+td {
+  border: 1px solid black;
+  width: 12.5%;
+  border-radius: 15%;
+}
+.ttable {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+th {
+  background-color: seashell;
+}
+.btn {
+  width: 70%;
+  height: 30px;
+  border-radius: 15px !important;
+  background-color: rgb(187, 226, 248);
+  float: center;
+  margin: 10px;
+  border-radius: 10%;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 10px 10px 10px rgba(14, 3, 3, 0.6);
+}
+.outbtn :hover {
+  background-color: rgb(255, 255, 255) !important;
+}
+.outbtn {
+  height: 5px;
+  text-align: center;
+}

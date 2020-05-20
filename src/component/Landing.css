@@ -1,0 +1,11 @@
+.head {
+  background-color: cornflowerblue;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+hr.line {
+  border: 5px solid rgb(116, 161, 206);
+  border-radius: 5px;
+}

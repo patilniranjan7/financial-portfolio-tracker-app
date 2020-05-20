@@ -1,0 +1,29 @@
+.shead {
+  text-align: center;
+}
+.flex {
+  list-style: none;
+  margin-left: 20%;
+}
+li {
+  margin: 10px;
+}
+.StockButton :hover {
+  background-color: rgb(212, 19, 19);
+}
+
+.StockButton {
+  width: 100px;
+  padding: 10px;
+  background-color: rgb(241, 239, 252);
+  margin: 10px;
+  border-radius: 10%;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+}
+
+span {
+  padding: 10px;
+  margin: 10px;
+  width: 500px;
+}

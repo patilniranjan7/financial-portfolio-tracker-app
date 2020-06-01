@@ -1,27 +1,30 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import "./Price.css";
 
-export const Price = (props) => {
-  //const [np, setnp] = useState();
+const Price = (props) => {
+  const [val, setval] = useState(0);
+  const Sym = props.Sym;
+  const price = props.price;
+
   useEffect(() => {
+    console.log("eee");
+    //debugger;
     fetch(
-      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=Sym &apikey="HOM2RDG75OK7JRH6"&datatype=csv`
+      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${Sym}&apikey="HOM2RDG75OK7JRH6"&datatype=csv`
     )
       .then((res) => {
         return res.text();
       })
-
       .then((res) => {
         const np = parseFloat(res.split(",")[9]);
-        console.log(np);
-        console.log(this.props.Sym);
+        isNaN(np) ? setval(0) : setval(np);
       });
-  });
-  return (
-    <div>
-      <td></td>
-    </div>
-  );
+    if (props.flag) {
+      setval(val);
+    } else setval(price - val);
+  }, [Sym]);
+  return <div>{val}</div>;
 };
 
 export default Price;

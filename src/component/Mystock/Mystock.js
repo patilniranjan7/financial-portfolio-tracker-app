@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import "./Mystock.css";
 import axios from "axios";
 import Price from "./Price";
 
-export class Mystock extends Component {
+class Mystock extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 1, counter: 0 };
+  }
+
   /* componentWillMount(Sym) {
      fetch(
       `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=Sym &apikey="HOM2RDG75OK7JRH6"&datatype=csv`
@@ -22,25 +27,24 @@ export class Mystock extends Component {
         } else return np;
       });
  }*/
-  fetch = (Sym) => {
+
+  /*componentDidMount() {
     fetch(
-      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${Sym}&apikey="HOM2RDG75OK7JRH6"&datatype=csv`
+      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey="HOM2RDG75OK7JRH6"&datatype=csv`
     )
       .then((res) => {
         return res.text();
       })
 
       .then((res) => {
-        const np = parseFloat(res.split(",")[9]);
-        console.log(np);
-        console.log(Sym);
-        if (np === "NaN") {
-          //goto npp;
-        } else return np;
+        const npp = parseFloat(res.split(",")[9]);
+        console.log(npp);
+        this.setState({
+          value: npp,
+        });
       });
-  };
-  componentDidUpdate(Sym) {}
-
+  }
+*/
   del = (Sym, Name) => {
     axios
       .put(
@@ -59,7 +63,7 @@ export class Mystock extends Component {
       });
   };
   // {<Price Sym={data.symbol} />}
-  lists = () => {
+  lists = (val) => {
     let list = [];
 
     for (let i in this.props.sdata) {
@@ -72,8 +76,8 @@ export class Mystock extends Component {
             <td>{data.name}</td>
             <td>{data.num}</td>
             <td>{data.price}</td>
-            <td>{this.fetch(data.symbol)}</td>
-            <td></td>
+            <td> {<Price Sym={data.symbol} flag={1} price={data.price} />}</td>
+            <td> {<Price Sym={data.symbol} flag={0} price={data.price} />}</td>
             <td className="outbtn">
               <button
                 className="btn"
@@ -91,6 +95,7 @@ export class Mystock extends Component {
   render() {
     return (
       <div className="ttable">
+        <h1 className="ss"> My stock</h1>
         <table>
           <thead>
             <tr>

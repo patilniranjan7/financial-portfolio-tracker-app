@@ -4,11 +4,13 @@ import "./Price.css";
 
 const Price = (props) => {
   const [val, setval] = useState(0);
+  const [Data,setData] = useState(0);
   const Sym = props.Sym;
   const price = props.price;
+  let x =0;
 
   useEffect(() => {
-    console.log("eee");
+   
     //debugger;
     fetch(
       `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${Sym}&apikey="HOM2RDG75OK7JRH6"&datatype=csv`
@@ -20,11 +22,18 @@ const Price = (props) => {
         const np = parseFloat(res.split(",")[9]);
         isNaN(np) ? setval(0) : setval(np);
       });
+     
     if (props.flag) {
-      setval(val);
-    } else setval(price - val);
+      
+      setData(val);
+    } 
+    else{
+      setData(val-price);
+    
+    }
+
   }, [Sym]);
-  return <div>{val}</div>;
+  return <div>{Data}</div>;
 };
 
 export default Price;

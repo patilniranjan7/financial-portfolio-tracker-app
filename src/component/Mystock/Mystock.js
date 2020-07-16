@@ -76,8 +76,8 @@ class Mystock extends Component {
             <td>{data.name}</td>
             <td>{data.num}</td>
             <td>{data.price}</td>
-            <td> {<Price Sym={data.symbol} flag={1} price={data.price} />}</td>
-            <td> {<Price Sym={data.symbol} flag={0} price={data.price} />}</td>
+            <td> {<Price Sym={data.symbol} flag={true} price={data.price} />}</td>
+            <td> {<Price Sym={data.symbol} flag={false} price={data.price} />}</td>
             <td className="outbtn">
               <button
                 className="btn"

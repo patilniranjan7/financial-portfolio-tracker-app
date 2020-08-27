@@ -22,7 +22,7 @@ const Landing = (props) => {
 
   console.log(sdata);
   return (
-    <div>
+    <div className = " bkcolor">
       <h1 className="head">Finance Portfolio Tracker</h1>
       <Mystock sdata={sdata} refresh={() => setupdate((s) => s + 1)} />
       <br /> <br /> <br />

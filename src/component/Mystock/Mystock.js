@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import "./Mystock.css";
 import axios from "axios";
 import Price from "./Price";
 
-class Mystock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: 1, counter: 0 };
-  }
+function Mystock(props) {
+      const [ newvalue , setnewvalue] = useState(0);
 
   /* componentWillMount(Sym) {
      fetch(
@@ -45,7 +42,7 @@ class Mystock extends Component {
       });
   }
 */
-  del = (Sym, Name) => {
+ const del = (Sym, Name) => {
     axios
       .put(
         "https://stocks-7cf84.firebaseio.com/data/" + Sym + ".json",
@@ -63,11 +60,11 @@ class Mystock extends Component {
       });
   };
   // {<Price Sym={data.symbol} />}
-  lists = (val) => {
+  const lists = (val) => {
     let list = [];
 
-    for (let i in this.props.sdata) {
-      const data = this.props.sdata[i];
+    for (let i in props.sdata) {
+      const data = props.sdata[i];
 
       if (data.num !== 0) {
         list.push(
@@ -76,12 +73,12 @@ class Mystock extends Component {
             <td>{data.name}</td>
             <td>{data.num}</td>
             <td>{data.price}</td>
-            <td> {<Price Sym={data.symbol} flag={true} price={data.price} />}</td>
-            <td> {<Price Sym={data.symbol} flag={false} price={data.price} />}</td>
+            {<Price Sym={data.symbol}  price={data.price} />}
+           
             <td className="outbtn">
               <button
                 className="btn"
-                onClick={() => this.del(data.symbol, data.name)}
+                onClick={() => del(data.symbol, data.name)}
               >
                 stop
               </button>
@@ -92,8 +89,9 @@ class Mystock extends Component {
     }
     return list;
   };
-  render() {
+
     return (
+      <div className = "bbody">
       <div className="ttable">
         <h1 className="ss"> My stock</h1>
         <table>
@@ -108,11 +106,11 @@ class Mystock extends Component {
               <th>STOP</th>
             </tr>
           </thead>
-          <tbody>{this.lists()}</tbody>
+          <tbody>{lists()}</tbody>
         </table>
       </div>
+      </div>
     );
-  }
 }
 
 export default Mystock;

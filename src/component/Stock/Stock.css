@@ -3,7 +3,7 @@
 }
 .flex {
   list-style: none;
-  margin-left: 20%;
+  margin-left: 35%;
 }
 li {
   margin: 10px;
@@ -15,7 +15,7 @@ li {
 .StockButton {
   width: 100px;
   padding: 10px;
-  background-color: rgb(241, 239, 252);
+  background-color: rgb(146, 223, 152);
   margin: 10px;
   border-radius: 10%;
   -moz-box-shadow: 3px 3px 5px 6px #ccc;

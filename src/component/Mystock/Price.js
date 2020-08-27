@@ -22,18 +22,11 @@ const Price = (props) => {
         const np = parseFloat(res.split(",")[9]);
         isNaN(np) ? setval(0) : setval(np);
       });
-     
-    if (props.flag) {
-      
       setData(val);
-    } 
-    else{
-      setData(val-price);
-    
-    }
-
+      
   }, [Sym]);
-  return <div>{Data}</div>;
+
+return <><td>{val}</td><td>{val - price}</td></>;
 };
 
 export default Price;

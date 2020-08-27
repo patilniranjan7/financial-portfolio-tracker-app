@@ -1,11 +1,15 @@
 .head {
-  background-color: cornflowerblue;
+  background-color: rgb(241, 107, 45);
   height: 60px;
+  color: aliceblue;
   width: 100%;
   text-align: center;
   padding-top: 10px;
 }
 hr.line {
-  border: 5px solid rgb(116, 161, 206);
+  border: 1.5px solid rgb(241, 107, 45);
   border-radius: 5px;
+}
+.bkcolor{
+  background-color: rgb(240, 248, 248);
 }

@@ -7,23 +7,33 @@ td {
 .ttable {
   margin-left: 15%;
   margin-right: 15%;
+  
+}
+.bbody{
+
 }
 th {
-  background-color: seashell;
+  background-color: rgb(114, 230, 143);
+}
+td{
+  background-color: rgb(200, 238, 250);
 }
 .btn {
   width: 70%;
   height: 30px;
   border-radius: 15px !important;
-  background-color: rgb(187, 226, 248);
+  color: #ccc;
+  background-color: rgb(223, 15, 15);
   float: center;
   margin: 10px;
   border-radius: 10%;
-  -moz-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow: 10px 10px 10px rgba(14, 3, 3, 0.6);
+  -moz-box-shadow: 3px 3px 5px 6px rgb(184, 150, 150);
+  box-shadow: 10px 10px 10px rgba(216, 101, 101, 0.6);
 }
+
 .outbtn :hover {
   background-color: rgb(255, 255, 255) !important;
+  color: black;
 }
 .outbtn {
   height: 5px;

@@ -13,22 +13,23 @@ td {
 
 }
 th {
-  background-color: rgb(114, 230, 143);
+  
+  background-color: rgb(235, 211, 211);
 }
 td{
-  background-color: rgb(200, 238, 250);
+  background-color: rgb(255, 243, 241);
 }
 .btn {
-  width: 70%;
+  width: 80%;
   height: 30px;
   border-radius: 15px !important;
-  color: #ccc;
-  background-color: rgb(223, 15, 15);
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
   float: center;
   margin: 10px;
-  border-radius: 10%;
-  -moz-box-shadow: 3px 3px 5px 6px rgb(184, 150, 150);
-  box-shadow: 10px 10px 10px rgba(216, 101, 101, 0.6);
+ 
+  -moz-box-shadow: 3px 3px 5px 6px rgb(197, 197, 197);
+  box-shadow: 10px 10px 10px rgba(146, 145, 145, 0.6);
 }
 
 .outbtn :hover {
